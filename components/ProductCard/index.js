@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { Store } from "../../utils/Store";
 
@@ -18,6 +19,7 @@ const ProductCard = (props) => {
   } = props.data;
 
   const { state, dispatch } = useContext(Store);
+  const router = useRouter();
 
   const addToCartHandler = () => {
     const existItem = state.cart.cartItems.find((item) => item.slug === slug);
@@ -29,6 +31,7 @@ const ProductCard = (props) => {
     }
 
     dispatch({ type: "CART_ADD_ITEM", payload: { ...props.data, quantity } });
+    router.push("/cart");
   };
 
   return (
