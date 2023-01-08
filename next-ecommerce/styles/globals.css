@@ -112,6 +112,10 @@ a {
   @apply rounded bg-amber-300 py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
 }
 
+input, select, textarea{
+  @apply rounded border py-2 px-4 shadow outline-none ring-indigo-300 focus:ring
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

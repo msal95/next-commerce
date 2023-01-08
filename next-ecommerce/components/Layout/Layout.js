@@ -43,7 +43,7 @@ export default function ({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex justify-center items-center h-10 shadow-inner">
-          <p>Copyright &copy; 2023 - By Next-COmmerce</p>
+          <p>Copyright &copy; 2023 - By Next-Commerce</p>
         </footer>
       </div>
     </>

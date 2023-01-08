@@ -1,14 +1,16 @@
 import Layout from "components/Layout/Layout";
 import Link from "next/link";
 import React, { useContext } from "react";
-import { XCircle } from "@heroicons/react/outline";
 
 import { Store } from "utils/Store";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 
 function CartScreen() {
   const { state, dispatch } = useContext(Store);
+
+  const router = useRouter();
 
   const {
     cart: { cartItems },
@@ -105,6 +107,14 @@ function CartScreen() {
                   Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </div>
+              </li>
+              <li>
+                <button
+                  className="primary-button w-full"
+                  onClick={() => router.push("login?redirect=/shipping")}
+                >
+                  Check Out
+                </button>
               </li>
             </ul>
           </div>
